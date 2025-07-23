@@ -1,0 +1,373 @@
+1. #include<stdio.h>
+// function to sort any given integer array in ascending order
+int *sort(int *x,int n){
+int a,i,j;
+for(i=0;i<n;++i){
+for(j=i+1;j<n;++j){
+if(x[i]>x[j]){
+a=x[i];
+x[i] = x[j];
+x[j] = a;
+}
+}
+}
+return x;
+}
+// function to do binary search on a sorted integer array
+int binarySearch(int arr[],int l,int r,int x){
+if(r>=l){
+int mid = l+(r-l)/2;
+if(arr[mid] == x)
+return mid;
+if(arr[mid]>x)
+return binarySearch(arr,l,mid-1,x);
+return binarySearch(arr,mid+1,r,x);
+}
+return -1;
+}
+// function to find the location of an integer in any given integer array
+int find_loc(int *s,int x){
+int m,ind;
+for(m=0;m<8;m++){
+Document Compiled by: Department of MCA, Surana College, Bengaluru
+5
+ind = m;
+if(s[m]==x)
+break;
+else
+continue;
+}
+return ind+1;
+}
+void main(){
+int i;
+int input[10] = {4,7,3,2,1,7,9,0};
+int loc1 = find_loc(input,7);
+printf("The input array: ");
+for(i=0;i<8;i++){
+printf("%d ",input[i]);
+}
+int *sorted = sort(input,8);
+int loc = binarySearch(sorted,0,7,7);
+printf("\nThe sorted array: ");
+for(i=0;i<8;i++){
+printf("%d ",sorted[i]);
+}
+printf("\nSearching for 7 using binary search. Result in location: %d",loc);
+printf("\nThe first occurance of 7 in input array: %d",loc1);
+}
+
+
+
+
+2. #include<stdio.h>
+// function to do quicksort on any given integer array
+void quicksort(int input[10],int start, int end){
+int i, j, pivot, temp;
+if(start<end){
+pivot=start;
+i=start;
+j=end;
+while(i<j){
+while(input[i]<=input[pivot] && i<end)
+i++;
+while(input[j]>input[pivot])
+j--;
+if(i<j){
+temp=input[i];
+input[i]=input[j];
+input[j]=temp;
+}
+}
+temp=input[pivot];
+input[pivot]=input[j];
+input[j]=temp;
+quicksort(input,start,j-1);
+quicksort(input,j+1,end);
+}
+}
+void main(){
+int input[10] = {5,3,1,6,0,2,4},i;
+quicksort(input,0,6);
+Document Compiled by: Department of MCA, Surana College, Bengaluru
+9
+printf("Sorted Array after Quicksort: ");
+for(i=0;i<7;i++)
+printf(" %d",input[i]);
+}
+
+
+
+
+3. #include<stdio.h>
+#include<stdlib.h>
+void merge(int array[], int l, int mid, int r)
+{
+int i, j, k;
+int x = mid - l + 1;
+int y = r - mid;
+int temp1[x], temp2[y];
+/* copy the contents of input array into temp arrays, left half into temp1 and right half into temp2 */
+for (i = 0; i < x; i++)
+temp1[i] = array[l + i];
+for (j = 0; j < y; j++)
+temp2[j] = array[mid + 1 + j];
+i = 0;
+j = 0;
+k = l;
+while (i < x && j < y) {
+if (temp1[i] <= temp2[j]) {
+array[k] = temp1[i];
+i++;
+}
+else {
+array[k] = temp2[j];
+j++;
+}
+k++;
+}
+while (i < x) {
+array[k] = temp1[i];
+i++;
+Document Compiled by: Department of MCA, Surana College, Bengaluru
+12
+k++;
+}
+while (j < y) {
+array[k] = temp2[j];
+j++;
+k++;
+}
+}
+//function arguments: input array, left index, right index
+void mergeSort(int array[], int l, int r)
+{
+if (l < r) {
+int mid = l + (r - l) / 2;
+mergeSort(array, l, mid);
+mergeSort(array, mid + 1, r);
+merge(array, l, mid, r);
+}
+}
+int main()
+{
+int a,b,input[] = {75,8,1,16,48,3,7,0};
+printf("The input array is: ");
+for(b=0;b<8;b++){
+printf(" %d ",input[b]);
+}
+printf("\n\n");
+//sorted and saved inside array named input
+mergeSort(input, 0, 7);
+Document Compiled by: Department of MCA, Surana College, Bengaluru
+13
+printf("\nSorted array in descending order: ");
+for(b=7;b>=0;b--){
+printf(" %d ",input[b]);
+}
+return 0;
+}
+
+
+
+4. #include<stdio.h>
+#include<stdlib.h>
+struct Node{ // node = data + pointer
+int data;
+struct Node* next;
+};
+//traversing the linked list
+void printList(struct Node* x){
+while(x != NULL){
+printf("%d ",x->data);
+x = x->next;
+}
+}
+void deleteList(struct Node** head,int x){
+struct Node* temp = *head,*previous;
+if(temp != NULL && temp->data == x){
+*head = temp->next;
+free(temp);
+printf("\n%d deleted..The list is: ",x);
+return;
+}
+while(temp != NULL && temp->data != x){
+//until the last node, desired node
+previous = temp;
+temp = temp->next;
+}
+if(temp == NULL)
+return;
+previous->next = temp->next;
+free(temp);
+Document Compiled by: Department of MCA, Surana College, Bengaluru
+16
+printf("\n%d deleted..The list is: ",x);
+return;
+}
+int main(){
+struct Node* head = (struct Node*)malloc(sizeof(struct Node));
+head->data = 61;
+head->next = NULL;
+printf("\n");
+printf("The list after inserting %d: ",head->data);
+printList(head);
+struct Node* node1 = (struct Node*)malloc(sizeof(struct Node));
+head->next = node1;
+node1->data = 16;
+node1->next = NULL;
+printf("\n");
+printf("The list after inserting %d: ",node1->data);
+printList(head);
+struct Node* node2 = (struct Node*)malloc(sizeof(struct Node));
+node1->next = node2;
+node2->data = 8;
+node2->next = NULL;
+printf("\n");
+printf("The list after inserting %d: ",node2->data);
+printList(head);
+struct Node* node3 = (struct Node*)malloc(sizeof(struct Node));
+node2->next = node3;
+node3->data = 27;
+node3->next = NULL;
+Document Compiled by: Department of MCA, Surana College, Bengaluru
+17
+printf("\n");
+printf("The list after inserting %d: ",node3->data);
+printList(head);
+printf("\n");
+deleteList(&head,8);
+printList(head);
+deleteList(&head,61);
+printList(head);
+deleteList(&head,27);
+printList(head);
+printf("\n");
+return 0;
+}
+
+
+5. #include<stdio.h>
+#include<stdlib.h>
+// Node structure containing power and coefficient of variable
+struct Node {
+int coeff;
+int pow;
+struct Node* next;
+};
+// Function to create new node
+void create_node(int x, int y, struct Node** temp)
+{
+struct Node *r, *z;
+z = *temp;
+if (z == NULL) {
+r = (struct Node*)malloc(sizeof(struct Node));
+r->coeff = x;
+r->pow = y;
+*temp = r;
+r->next = (struct Node*)malloc(sizeof(struct Node));
+r = r->next;
+r->next = NULL;
+}
+else {
+r->coeff = x;
+r->pow = y;
+r->next = (struct Node*)malloc(sizeof(struct Node));
+Document Compiled by: Department of MCA, Surana College, Bengaluru
+19
+r = r->next;
+r->next = NULL;
+}
+}
+// Function Adding two polynomial numbers
+void polyadd(struct Node* poly1, struct Node* poly2,
+struct Node* poly)
+{
+while (poly1->next && poly2->next) {
+/* If the power of 1st polynomial is greater than 2nd, store 1st as it is and move the pointer */
+if (poly1->pow > poly2->pow) {
+poly->pow = poly1->pow;
+poly->coeff = poly1->coeff;
+poly1 = poly1->next;
+}
+/* If the power of 2nd polynomial is greater than 1st, store 2nd as it is and move the pointer */
+else if (poly1->pow < poly2->pow) {
+poly->pow = poly2->pow;
+poly->coeff = poly2->coeff;
+poly2 = poly2->next;
+}
+/* If power of both polynomial numbers are same then add their coefficients */
+else {
+poly->pow = poly1->pow;
+poly->coeff = poly1->coeff + poly2->coeff;
+poly1 = poly1->next;
+poly2 = poly2->next;
+}
+Document Compiled by: Department of MCA, Surana College, Bengaluru
+20
+// Dynamically create a new node
+poly->next
+= (struct Node*)malloc(sizeof(struct Node));
+poly = poly->next;
+poly->next = NULL;
+}
+while (poly1->next || poly2->next) {
+if (poly1->next) {
+poly->pow = poly1->pow;
+poly->coeff = poly1->coeff;
+poly1 = poly1->next;
+}
+if (poly2->next) {
+poly->pow = poly2->pow;
+poly->coeff = poly2->coeff;
+poly2 = poly2->next;
+}
+poly->next
+= (struct Node*)malloc(sizeof(struct Node));
+poly = poly->next;
+poly->next = NULL;
+}
+}
+// Display Linked list
+void show(struct Node* node)
+{
+while (node->next != NULL) {
+printf("%dx^%d", node->coeff, node->pow);
+node = node->next;
+if (node->coeff >= 0) {
+if (node->next != NULL)
+printf("+");
+}
+}
+}
+
+
+Document Compiled by: Department of MCA, Surana College, Bengaluru
+21
+int main()
+{
+struct Node *poly1 = NULL, *poly2 = NULL, *poly = NULL;
+// Create the polynomial, 6x^3+10x^2+0x+5
+create_node(6, 3, &poly1);
+create_node(10, 2, &poly1);
+create_node(0, 1, &poly1);
+create_node(5, 0, &poly1);
+// Create the polynomial, 4x^2+2x+1
+create_node(4, 2, &poly2);
+create_node(2, 1, &poly2);
+create_node(1, 0, &poly1);
+printf("\n");
+printf("1st expression: ");
+show(poly1);
+printf("\n");
+printf("\n2nd expression: ");
+show(poly2);
+printf("\n");
+poly = (struct Node*)malloc(sizeof(struct Node));
+// Function add two polynomial numbers
+polyadd(poly1, poly2, poly);
+printf("\nAdded polynomials: ");
+show(poly);
+return 0;
+}
+
