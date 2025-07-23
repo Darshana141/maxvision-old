@@ -224,8 +224,8 @@ resultDropdown.empty();
 }
 
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "partsvis_crm";
+$password = ";iv(@7XApONV";
 $dbname = "partsvis_maxvision";
 
 // Create connection
@@ -340,8 +340,8 @@ C-0.1,9.8-0.1,10.4,0.3,10.7z"></path>
 <?php
 
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "partsvis_crm";
+$password = ";iv(@7XApONV";
 $dbname = "partsvis_maxvision";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -373,8 +373,8 @@ while($row = $result->fetch_assoc()) {
 <?php
 
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "partsvis_crm";
+$password = ";iv(@7XApONV";
 $dbname = "partsvis_maxvision";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -407,8 +407,8 @@ while($row = $result->fetch_assoc()) {
 <?php
 
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "partsvis_crm";
+$password = ";iv(@7XApONV";
 $dbname = "partsvis_maxvision";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -454,8 +454,8 @@ C-0.1,9.8-0.1,10.4,0.3,10.7z"></path>
 <?php
 
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "partsvis_crm";
+$password = ";iv(@7XApONV";
 $dbname = "partsvis_maxvision";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -507,8 +507,8 @@ C-0.1,9.8-0.1,10.4,0.3,10.7z"></path>
 <?php
 
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "partsvis_crm";
+$password = ";iv(@7XApONV";
 $dbname = "partsvis_maxvision";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -559,8 +559,8 @@ C-0.1,9.8-0.1,10.4,0.3,10.7z"></path>
 <?php
 
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "partsvis_crm";
+$password = ";iv(@7XApONV";
 $dbname = "partsvis_maxvision";
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -1205,8 +1205,8 @@ else{
             <?php
 
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "partsvis_crm";
+$password = ";iv(@7XApONV";
 $dbname = "partsvis_maxvision";
 
 // Create connection
@@ -1248,8 +1248,8 @@ while($row = $result->fetch_assoc()) {
      <ul class="mobile-menu__links">
             <?php
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "partsvis_crm";
+$password = ";iv(@7XApONV";
 $dbname = "partsvis_maxvision";
 
 // Create connection
@@ -1292,8 +1292,8 @@ while($row = $result->fetch_assoc()) {
             <?php
 
 $servername = "localhost";
-$username = "root";
-$password = "";
+$username = "partsvis_crm";
+$password = ";iv(@7XApONV";
 $dbname = "partsvis_maxvision";
 
 // Create connection

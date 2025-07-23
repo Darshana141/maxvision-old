@@ -130,7 +130,7 @@ if($user=='')
                         </div>
                         <?php 
 						$servername = "localhost";
-						$username = "root";
+						$username = "partsvis_crm";
 						$password = ";iv(@7XApONV";
 						$dbname = "partsvis_maxvision";
 						
@@ -480,7 +480,7 @@ $qry = "SELECT count(id) as count from opportunities where description = '".$rid
         <ul class="megamenu-links">
         <?php
 $servername = "localhost";
-						$username = "root";
+						$username = "partsvis_crm";
 						$password = ";iv(@7XApONV";
 						$dbname = "partsvis_maxvision";
 // Create connection
@@ -513,7 +513,7 @@ if ($result->num_rows > 0) {
         <?php
 
 $servername = "localhost";
-						$username = "root";
+						$username = "partsvis_crm";
 						$password = ";iv(@7XApONV";
 						$dbname = "partsvis_maxvision";
 // Create connection
@@ -546,7 +546,7 @@ if ($result->num_rows > 0) {
 											  <?php
 
 $servername = "localhost";
-						$username = "root";
+						$username = "partsvis_crm";
 						$password = ";iv(@7XApONV";
 						$dbname = "partsvis_maxvision";
 // Create connection
@@ -579,7 +579,7 @@ if ($result->num_rows > 0) {
 										  	<?php
 
 $servername = "localhost";
-						$username = "root";
+						$username = "partsvis_crm";
 						$password = ";iv(@7XApONV";
 						$dbname = "partsvis_maxvision";
 // Create connection
@@ -615,7 +615,7 @@ if ($result->num_rows > 0) {
         <?php
 
 $servername = "localhost";
-						$username = "root";
+						$username = "partsvis_crm";
 						$password = ";iv(@7XApONV";
 						$dbname = "partsvis_maxvision";
 // Create connection
@@ -651,7 +651,7 @@ if ($result->num_rows > 0) {
 										  	<?php
 
 $servername = "localhost";
-						$username = "root";
+						$username = "partsvis_crm";
 						$password = ";iv(@7XApONV";
 						$dbname = "partsvis_maxvision";
 // Create connection

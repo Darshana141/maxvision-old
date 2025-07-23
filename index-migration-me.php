@@ -130,8 +130,8 @@ if($user=='')
                         </div>
                         <?php 
 						$servername = "localhost";
-						$username = "root";
-						$password = "";
+						$username = "partsvis_crm";
+						$password = ";iv(@7XApONV";
 						$dbname = "partsvis_maxvision";
 						
 						// Create connection
